@@ -170,12 +170,11 @@ class App extends Component {
 
 					<hr />
 					<Switch>
-						<Route path="/" component={Home} />
+						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
 						<Route path="/teachers" component={Teachers} />
 						<Route path="/courses" component={Courses} />
-						<Route exact path="/" 
-						render={() => <Redirect to="/" />} />
+						<Route render={() => <Redirect to="/" />} />
 					</Switch>
 				</div>
 			</BrowserRouter>
