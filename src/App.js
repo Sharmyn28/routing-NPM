@@ -161,7 +161,7 @@ class App extends Component {
 					<header>
 						<span className='icn-logo'><i className='material-icons'>code</i></span>
 						<ul className='main-nav'>
-							<li><NavLink to="/">Home</NavLink></li>
+							<li><NavLink exact to="/">Home</NavLink></li>
 							<li><NavLink to="/about">About</NavLink></li>
 							<li><NavLink to="/teachers">Teachers</NavLink></li>
 							<li><NavLink to="/courses">Courses</NavLink></li>
@@ -170,10 +170,12 @@ class App extends Component {
 
 					<hr />
 					<Switch>
-						<Route exact path="/" component={Home} />
+						<Route path="/" component={Home} />
 						<Route path="/about" component={About} />
 						<Route path="/teachers" component={Teachers} />
 						<Route path="/courses" component={Courses} />
+						<Route exact path="/" 
+						render={() => <Redirect to="/" />} />
 					</Switch>
 				</div>
 			</BrowserRouter>
